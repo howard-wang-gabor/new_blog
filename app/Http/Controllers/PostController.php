@@ -14,10 +14,15 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $posts = DB::table('posts')->get();
-        
+    {   
+        // Array
         // $posts = array(['id'=>1,'title'=>'title1','content'=>'content1','tag'=>'tag1'],['id'=>2,'title'=>'title2', 'content'=>'content2','tag'=>'tag2']);
+        // Query Builder
+        // $posts = DB::table('posts')->get();
+        // ORM
+        $posts = Post::all();
+        
+        
         return view ('posts',['posts'=>$posts]);
     }
 
