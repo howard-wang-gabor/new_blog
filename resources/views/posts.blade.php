@@ -36,4 +36,9 @@
                 <td>tag4</td>
             </tr>
         </table>
+        @foreach ($posts as $post)
+        {{$post['title']}}
+        {{$post['content']}}
+        {{$post['tag']}}
+        @endforeach
     </body>
