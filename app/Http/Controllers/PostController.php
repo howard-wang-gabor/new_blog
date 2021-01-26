@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = array(['id'=>1,'title'=>'title1','content'=>'content1','tag'=>'tag1'],['id'=>2,'title'=>'title2', 'content'=>'content2','tag'=>'tag2']);
+        $posts = DB::table('posts')->get();
+        
+        // $posts = array(['id'=>1,'title'=>'title1','content'=>'content1','tag'=>'tag1'],['id'=>2,'title'=>'title2', 'content'=>'content2','tag'=>'tag2']);
         return view ('posts',['posts'=>$posts]);
     }
 

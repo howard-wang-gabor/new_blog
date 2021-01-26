@@ -13,10 +13,10 @@
             </tr>
         @foreach ($posts as $post)
             <tr>
-                <td>{{$post['id']}}</td>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['content']}}</td>
-                <td>{{$post['tag']}}</td>
+                <td>{{$post->id}}</td>
+                <td>{{$post->title}}</td>
+                <td>{{$post->content}}</td>
+                <td>{{$post->tag}}</td>
             </tr>
         @endforeach
         </table>
